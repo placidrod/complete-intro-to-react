@@ -12,9 +12,13 @@
   "env": {
     "es6": true,
     "browser": true,
-    "node": true
+    "node": true,
+    "jest": true
   },
   "rules": {
     "linebreak-style": 0
+  },
+  "globals": {
+    "DEBUG": false
   }
 }
