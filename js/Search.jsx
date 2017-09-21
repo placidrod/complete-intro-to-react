@@ -5,13 +5,6 @@ import preload from '../data.json';
 import ShowCard from './ShowCard';
 
 class Search extends Component {
-  // constructor() {
-  //   super();
-  //   this.state = {
-  //     searchTerm: 'my debug statement'
-  //   };
-  //   this.handleSearchTermChange = this.handleSearchTermChange.bind(this);
-  // }
   state = {
     searchTerm: ''
   };
