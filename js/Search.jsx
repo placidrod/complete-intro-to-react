@@ -35,6 +35,8 @@ class Search extends Component {
                 poster={show.poster}
                 year={show.year}
                 description={show.description}
+                trailer={show.trailer}
+                imdbID={show.imdbID}
               />
             ))}
         </div>
