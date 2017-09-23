@@ -14,17 +14,7 @@ const Search = (props: {
     <div>
       {props.shows
         .filter(show => `${show.title} ${show.description}`.toUpperCase().includes(props.searchTerm.toUpperCase()))
-        .map(show => (
-          <ShowCard
-            key={show.imdbID}
-            title={show.title}
-            poster={show.poster}
-            year={show.year}
-            description={show.description}
-            trailer={show.trailer}
-            imdbID={show.imdbID}
-          />
-        ))}
+        .map(show => <ShowCard key={show.imdbID} {...show} />)}
     </div>
   </div>
 );
