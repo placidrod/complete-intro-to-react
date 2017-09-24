@@ -10,7 +10,8 @@ class Landing extends Component {
   props: {
     searchTerm: string,
     handleSearchTermChange: Function,
-    history: RouterHistory
+    history: RouterHistory,
+    handleClearSearchTerm: Function
   };
   goToSearch = (event: SyntheticEvent) => {
     event.preventDefault();
@@ -28,7 +29,9 @@ class Landing extends Component {
             placeholder="search"
           />
         </form>
-        <Link to="/search">or Browse All</Link>
+        <Link to="/search" onClick={this.props.handleClearSearchTerm}>
+          or Browse All
+        </Link>
       </div>
     );
   }
@@ -38,6 +41,9 @@ const mapStateToProps = state => ({ searchTerm: state.searchTerm });
 const mapDispatchToProps = (dispatch: Function) => ({
   handleSearchTermChange(event) {
     dispatch(setSearchTerm(event.target.value));
+  },
+  handleClearSearchTerm() {
+    dispatch(setSearchTerm(''));
   }
 });
 
